@@ -1,0 +1,2 @@
+molecule	gene	start	end	strand	orientation
+3R	Myo81F	567076	2532932	forward	0
