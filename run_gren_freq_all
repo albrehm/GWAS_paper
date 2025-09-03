@@ -1,50 +1,38 @@
-# 25197 evolved resistance (?)
-./run_grenedalf_frequency_pairwise 25197-er-uninfected 25197-er-infected /home/abrehm/GWAS2/new_seq/results/trimmed_fastq 
+# 25197
+./run_gren_pairwise 25197-er-uninfected 25197-er-infected /home/abrehm/GWAS2/new_seq/results/trimmed_fastq 
 
-./frequency_to_fisher_pval grenedalf.frequency.25197-er-uninfected_25197-er-infected.frequency.csv > grenedalf.frequency.25197-er-uninfected_25197-er-infected.frequency.csv.neg_log_pval
+./freq_to_fisher_p grenedalf.frequency.25197-er-uninfected_25197-er-infected.frequency.csv > grenedalf.frequency.25197-er-uninfected_25197-er-infected.frequency.csv.neg_log_pval
 
 
 # FoCo17 merged
-./run_grenedalf_frequency_pairwise Foco17Positive_merged Foco17Negative_merged /home/abrehm/GWAS2/new_seq/results/trimmed_fastq & 
+./run_gren_pairwise Foco17Positive_merged Foco17Negative_merged /home/abrehm/GWAS2/new_seq/results/trimmed_fastq & 
 
 # FoCo23 merged
-./run_grenedalf_frequency_pairwise Foco23Positive Foco23Negative_merged /home/abrehm/GWAS2/new_seq/results/trimmed_fastq &
+./run_gren_pairwise Foco23Positive Foco23Negative_merged /home/abrehm/GWAS2/new_seq/results/trimmed_fastq &
 
 wait
 
-./frequency_to_fisher_pval grenedalf.frequency.Foco17Positive_merged_Foco17Negative_merged.frequency.csv > grenedalf.frequency.Foco17Positive_merged_Foco17Negative_merged.frequency.csv.neg_log_pval
+./freq_to_fisher_p grenedalf.frequency.Foco17Positive_merged_Foco17Negative_merged.frequency.csv > grenedalf.frequency.Foco17Positive_merged_Foco17Negative_merged.frequency.csv.neg_log_pval
 
-./frequency_to_fisher_pval grenedalf.frequency.Foco23Positive_Foco23Negative_merged.frequency.csv > grenedalf.frequency.Foco23Positive_Foco23Negative_merged.frequency.csv.neg_log_pval
+./freq_to_fisher_p grenedalf.frequency.Foco23Positive_Foco23Negative_merged.frequency.csv > grenedalf.frequency.Foco23Positive_Foco23Negative_merged.frequency.csv.neg_log_pval
 
 
 
 # wild 
-./run_grenedalf_frequency_pairwise A2 Negative_combined /home/abrehm/GWAS2/new_seq/results/trimmed_fastq   
+./run_gren_pairwise A2 Negative_combined /home/abrehm/GWAS2/new_seq/results/trimmed_fastq   
 
-./frequency_to_fisher_pval grenedalf.frequency.A2_Negative_combined.frequency.csv > grenedalf.frequency.A2_Negative_combined.frequency.csv.neg_log_pval
+./freq_to_fisher_p grenedalf.frequency.A2_Negative_combined.frequency.csv > grenedalf.frequency.A2_Negative_combined.frequency.csv.neg_log_pval
 
 exit
 
-
-# FoCo17 non-merged
-./run_grenedalf_frequency_pairwise Foco17Positive Foco17Negative1  ../../host_mapping/host_mapping_workflow/results_foco/filter &
-./run_grenedalf_frequency_pairwise Foco17Positive Foco17Negative2  ../../host_mapping/host_mapping_workflow/results_foco/filter &
-./run_grenedalf_frequency_pairwise Foco17Negative1 Foco17Negative2  ../../host_mapping/host_mapping_workflow/results_foco/filter &
-wait
-
-# FoCo23 non-merged
-./run_grenedalf_frequency_pairwise Foco23Positive Foco23Negative1  ../../host_mapping/host_mapping_workflow/results_foco/filter &
-./run_grenedalf_frequency_pairwise Foco23Positive Foco23Negative2  ../../host_mapping/host_mapping_workflow/results_foco/filter &
-./run_grenedalf_frequency_pairwise Foco23Negative1 Foco23Negative2  ../../host_mapping/host_mapping_workflow/results_foco/filter &
-wait
 
 
 # ------------------
 # calculate e-values
 # ------------------
-./frequency_to_fisher_pval grenedalf.frequency.Foco23Positive_Foco23Negative2.frequency.csv grenedalf.frequency.Foco23Positive_Foco23Negative2.frequency.csv.neg_log_pval
-./frequency_to_fisher_pval grenedalf.frequency.Foco23Negative1_Foco23Negative2.frequency.csvgrenedalf.frequency.Foco23Negative1_Foco23Negative2.frequency.csv.neg_log_pval
-./frequency_to_fisher_pval grenedalf.frequency.Foco23Positive_Foco23Negative1.frequency.csv grenedalf.frequency.Foco23Positive_Foco23Negative1.frequency.csv.neg_log_pval
-./frequency_to_fisher_pval grenedalf.frequency.Foco17Negative1_Foco17Negative2.frequency.csvgrenedalf.frequency.Foco17Negative1_Foco17Negative2.frequency.csv.neg_log_pval
-./frequency_to_fisher_pval grenedalf.frequency.Foco17Positive_Foco17Negative2.frequency.csv grenedalf.frequency.Foco17Positive_Foco17Negative2.frequency.csv.neg_log_pval
-./frequency_to_fisher_pval grenedalf.frequency.Foco17Positive_Foco17Negative1.frequency.csv grenedalf.frequency.Foco17Positive_Foco17Negative1.frequency.csv.neg_log_pval
+./freq_to_fisher_p grenedalf.frequency.Foco23Positive_Foco23Negative2.frequency.csv grenedalf.frequency.Foco23Positive_Foco23Negative2.frequency.csv.neg_log_pval
+./freq_to_fisher_p grenedalf.frequency.Foco23Negative1_Foco23Negative2.frequency.csvgrenedalf.frequency.Foco23Negative1_Foco23Negative2.frequency.csv.neg_log_pval
+./freq_to_fisher_p grenedalf.frequency.Foco23Positive_Foco23Negative1.frequency.csv grenedalf.frequency.Foco23Positive_Foco23Negative1.frequency.csv.neg_log_pval
+./freq_to_fisher_p grenedalf.frequency.Foco17Negative1_Foco17Negative2.frequency.csvgrenedalf.frequency.Foco17Negative1_Foco17Negative2.frequency.csv.neg_log_pval
+./freq_to_fisher_p grenedalf.frequency.Foco17Positive_Foco17Negative2.frequency.csv grenedalf.frequency.Foco17Positive_Foco17Negative2.frequency.csv.neg_log_pval
+./freq_to_fisher_p grenedalf.frequency.Foco17Positive_Foco17Negative1.frequency.csv grenedalf.frequency.Foco17Positive_Foco17Negative1.frequency.csv.neg_log_pval
