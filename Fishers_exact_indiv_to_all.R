@@ -1,7 +1,8 @@
+###file to upload all fisher's exact data, rename columns, and combine the data
+
 library(tidyverse)
 library(patchwork)
-library(gggenes)
-library(ggfittext)
+
 
 fet_wild <- read.delim ("./grenedalf.frequency.A2_Negative_combined.frequency.csv.neg_log_pval_new", sep=",", header=F)
 fet_foco17<- read.delim("./grenedalf.frequency.Foco17Positive_merged_Foco17Negative_merged.frequency.csv.neg_log_pval", sep= ",", header=F)
